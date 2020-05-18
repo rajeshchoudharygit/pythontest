@@ -2,6 +2,7 @@ import math
 import re
 import datetime
 
+
 def task1(tenant_data):
     """Extracting rental data for each customer, converting them into float value and storing in a list"""
     Current_Rent = [float(custdata['Current Rent']) for custdata in tenant_data]
@@ -10,7 +11,7 @@ def task1(tenant_data):
     #Obtain the first 5 items from the resultant list and output to the console
     print(Current_Rent[:5])
     print('\n')
-    return Current_Rent[:5]
+    return Current_Rent[:5] # to validate test case
 
 def task2(tenant_data):
     """create a new list of mast data with “Lease Years” = 25 years"""
@@ -26,7 +27,7 @@ def task2(tenant_data):
         count += 1
     #total rent for all tenansts with 25 years lease
     print(f"\nThe total rent for all tenants with 25 years lease is {total_rent}\n")
-    return total_rent
+    return total_rent  #to validate test case
 
 
 def task3(tenant_data):
@@ -47,8 +48,8 @@ def task3(tenant_data):
             break
         else:
             each_tenant = tenants[0]
-        distinct_tenants+=1
-    return distinct_tenants
+        distinct_tenants += 1
+    return distinct_tenants#to validate test case
 
 
 def task4(tenant_data):
@@ -71,4 +72,4 @@ def task4(tenant_data):
                 print(key + ' : ' + value)
 
             print('\n')
-    return len(lease_year_date)
+    return len(lease_year_date) #to validate test case
