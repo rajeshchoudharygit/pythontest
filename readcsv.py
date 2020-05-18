@@ -6,9 +6,9 @@ def read_csv():
     csv.register_dialect('myDialect',
                          delimiter=',',
                          quoting=csv.QUOTE_ALL)
-    customer_data = []
+    tenant_data = []
     with open('./testdata/Python Developer Test Dataset.csv', mode='r') as csv_file:
         csv_reader = csv.DictReader(csv_file,  dialect='myDialect')
         for row in csv_reader:
-            customer_data.append(row)
-    return customer_data
+            tenant_data.append(row)
+    return tenant_data
