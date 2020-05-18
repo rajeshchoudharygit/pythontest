@@ -17,3 +17,7 @@ class TestPrepareData(unittest.TestCase):
     def test_task3(self):
         result = preparedata.task3(self.test_data)
         self.assertEqual(result, 6)
+
+    def test_task4(self):
+        result = preparedata.task4(self.test_data)
+        self.assertEqual(result, 5)

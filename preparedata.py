@@ -1,5 +1,6 @@
 import math
 import re
+import datetime
 
 def task1(tenant_data):
     """Extracting rental data for each customer, converting them into float value and storing in a list"""
@@ -48,3 +49,26 @@ def task3(tenant_data):
             each_tenant = tenants[0]
         distinct_tenants+=1
     return distinct_tenants
+
+
+def task4(tenant_data):
+    """List the data for rentals with “Lease Start Date” between 1st June 1999 and 31st August 2007"""
+    #lease_start_date = [item for item in tenant_data if (01-June-99<= item['Lease Start Date'] <=31-August-07]
+    format_str = '%d %b %Y'  # current date format as a string
+    lease_year_date = []
+    start_date = datetime.date(1999, 6, 1)  # desired lease start date between between 1st June 1999
+    end_date = datetime.date(2007, 8, 31) # and 31st August 2007
+    for each_item in tenant_data:
+        # converting lease start date from string to datetime object and then comparing again desired start date
+        datetime_obj = datetime.datetime.strptime(each_item['Lease Start Date'], format_str)
+        if start_date <= datetime_obj.date() <= end_date:
+            ##formatting date for all the string entries used in lease end date and lease start date
+            each_item['Lease Start Date'] = datetime_obj.strftime("%d/%m/%Y")
+            each_item['Lease End Date'] = datetime.datetime.strptime(each_item['Lease End Date'], format_str).strftime("%d/%m/%Y")
+            lease_year_date.append(each_item)
+            #iterating through the selected entries and displaying on console
+            for key, value in each_item.items():
+                print(key + ' : ' + value)
+
+            print('\n')
+    return len(lease_year_date)
