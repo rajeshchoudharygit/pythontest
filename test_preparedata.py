@@ -14,4 +14,6 @@ class TestPrepareData(unittest.TestCase):
         result = preparedata.task2(self.test_data)
         self.assertEqual(result, 46500.0)
 
-
+    def test_task3(self):
+        result = preparedata.task3(self.test_data)
+        self.assertEqual(result, 6)
