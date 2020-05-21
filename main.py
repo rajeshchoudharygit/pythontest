@@ -1,3 +1,6 @@
+'''
+main file to start execution of the program
+'''
 from readcsv import read_csv
 from preparedata import task1, task2, task3, task4
 
@@ -25,4 +28,3 @@ if __name__ == '__main__':
             break
         else:
             print("\nBad input, please select appropriate option \n")
-
